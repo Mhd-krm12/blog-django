@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -123,3 +124,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#if you want to make Static folder for all project you can use this code.
+
+STATICFILES_DORS=[
+    os.path.join(BASE_DIR, "static"),
+    (r'C:\Users\Mhd Krm\Desktop\mypojects\2022\Blogger\src\static')
+    ]
