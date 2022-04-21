@@ -127,7 +127,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #if you want to make Static folder for all project you can use this code.
 
-STATICFILES_DORS=[
-    os.path.join(BASE_DIR, "static"),
-    (r'C:\Users\Mhd Krm\Desktop\mypojects\2022\Blogger\src\static')
-    ]
+# STATICFILES_DORS=[
+#     os.path.join(BASE_DIR, "static"),
+#     (r'C:\Users\Mhd Krm\Desktop\mypojects\2022\Blogger\src\static')
+#     ]
