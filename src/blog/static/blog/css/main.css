@@ -1,8 +1,9 @@
-div{
-    color: black
+div
+{
+    color: green;
+
 }
 html, body {
     direction: ltr;
     text-align: right;
-
 }
