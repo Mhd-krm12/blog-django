@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html> 
 
-<html>
+<html lang="tr">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=divice-width, initial-scale=1, shrink-to-fit=no">
@@ -12,9 +12,59 @@
     
     </head>
     <body>
+        <header>
+            <!--start navbar-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <img src="{% static 'blog\images\i2.ico' %}" alt="logo" width="45px">
+                  <a class="navbar-brand" href="#">Blog</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                          
+                        <a class="nav-link active" aria-current="page" href="#" >
+                            
+                            Anasyfa</a>
+                        
+                      </li>
+                      
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          kurslar
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="#">python</a></li>
+                          <li><a class="dropdown-item" href="#">Django</a></li>
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="#">c++</a></li>
+                        </ul>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Hakkında</a>
+                      </li>
+                     
+                    </ul>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link disabled ">Giriş yap</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">kayıt ol</a>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+              <!--End navbar-->
+        </header>
+
+        
         <div>
             <i class="fa-solid fa-house"></i>
-            Hello
+            -------
         </div>
         <script src="{% static 'blog/js/jquery-3.3.1.slim.min.js' %}"></script>
         <script src="{% static 'blog/js/popper.min.js' %}"></script>
