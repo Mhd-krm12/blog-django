@@ -1,6 +1,6 @@
 div
 {
-   
+   color: black;
 
 }
 html, body{
@@ -54,4 +54,8 @@ html, body{
 
 .back-btn{
     float: left;
+}
+
+.post{
+    border: 1px solid #CCC;
 }
