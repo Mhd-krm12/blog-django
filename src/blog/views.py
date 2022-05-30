@@ -1,34 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from matplotlib.style import context
+from .models import Post
 
-posts=[
-    {'title':'Birinci paylaşım',
-    'content':'Birinici paylaşım içeriği .. Birinici paylaşım içeriği .. Birinici paylaşım içeriği .. Birinici paylaşım içeriği .. Birinici paylaşım içeriği .. Birinici paylaşım içeriği .. Birinici paylaşım içeriği .. Birinici paylaşım içeriği .. Birinici paylaşım içeriği .. Birinici paylaşım içeriği .. ',
-    'post_date':'15-1-2019',
-    'author':'ahmed Bey'
-    },
-    {'title':'İkinci paylaşım',
-    'content':'İkinci paylaşım içeriği .. İkinci paylaşım içeriği .. İkinci paylaşım içeriği .. İkinci paylaşım içeriği .. İkinci paylaşım içeriği .. İkinci paylaşım içeriği .. İkinci paylaşım içeriği .. İkinci paylaşım içeriği .. İkinci paylaşım içeriği .. İkinci paylaşım içeriği .. ',
-    'post_date':'15-2-2019',
-    'author':'Efe Bey'
-    },
-    {'title':'Üçüncü paylaşım',
-    'content':'üçünü paylaşım içeriği .. üçünü paylaşım içeriği .. üçünü paylaşım içeriği .. üçünü paylaşım içeriği .. üçünü paylaşım içeriği .. üçünü paylaşım içeriği .. üçünü paylaşım içeriği .. üçünü paylaşım içeriği .. üçünü paylaşım içeriği .. üçünü paylaşım içeriği ..',
-    'post_date':'15-3-2019',
-    'author':'Ali Bey'
-    },
-    {'title':'Dörtüncü paylaşım',
-    'content':'Dörtüncü paylaşım içeriği ..  Dörtüncü paylaşım içeriği .. Dörtüncü paylaşım içeriği .. Dörtüncü paylaşım içeriği .. Dörtüncü paylaşım içeriği .. Dörtüncü paylaşım içeriği .. Dörtüncü paylaşım içeriği .. Dörtüncü paylaşım içeriği .. Dörtüncü paylaşım içeriği .. Dörtüncü paylaşım içeriği .. ',
-    'post_date':'15-4-2019',
-    'author':'Mehmet Bey'
-    }
-
-]
-# Create your views here.
+# posts=[]
 def home(request):
     context={
-        'title':'Anasayfa',
-        'posts':posts,
+        'title':Post,
+        'posts':Post.objects.all()
     }
     return render(request, 'blog/index.html' , context)
 
@@ -37,3 +15,11 @@ def about(request):
     return render(request, 'blog/about.html' )
 
 
+def post_detail(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    context={
+        'title':'title',
+        'post':post,
+    }
+
+    return render(request, 'blog/detail.html',  context )
