@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 
 
+
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
@@ -13,5 +14,19 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-class Meta:                                 #tarihe göre sıralama
+    class Meta:                                 #tarihe göre sıralama
         ordering = ('-post_date', )     
+
+    
+class Comment(models.Model):
+        name = models.CharField(max_length=50, verbose_name='ad')
+        email = models.EmailField(verbose_name='e-posta')
+        body = models.TextField(verbose_name='yorum')
+        comment_date = models.DateTimeField(auto_now_add=True)
+        active = models.BooleanField(default=False)
+        post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')    
+        def __str__(self):
+            return '"{}" {} paylaşımına yorum yaptı.'.format(self.name, self.post)
+
+        class Meta:                                 #tarihe göre sıralama
+             ordering = ('-comment_date', )

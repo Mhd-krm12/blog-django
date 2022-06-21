@@ -14,7 +14,7 @@
         
         <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'blog/css/main.css' %}">
-        <link rel="shortcut icon" href="{% static 'blog\images\i2.ico' %}">
+        <link rel="shortcut icon" href="{% static 'blog\images\b.png' %}">
         
     
     </head>
@@ -23,7 +23,7 @@
             <!--Start Navbar-->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#">
-                <img src="{% static 'blog\images\i2.ico' %}" alt="logo" width="30px">
+                <img src="{% static 'blog\images\b.png' %}" alt="logo" width="30px">
                 Blog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Kurslar
+                            ...
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item"
@@ -84,7 +84,7 @@
                     </div>
                     <div class="col-md-4">
                         <div class="card mb-3 ">
-                            <h3 class="text-center bg-secondary text-light p-2">son paylaşım</h3>
+                            <h3 class="text-center bg-secondary text-light p-2">son paylaşımlar</h3>
                             {% include 'blog/latest_posts.html' %}
                         </div> 
                         <div class="card mb-3" >

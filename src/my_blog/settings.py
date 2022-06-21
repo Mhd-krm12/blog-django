@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
     'user.apps.UserConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     os.path.join(BASE_DIR, "static"),
 #     (r'C:\Users\Mhd Krm\Desktop\mypojects\2022\Blogger\src\static')
 #     ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
