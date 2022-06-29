@@ -40,40 +40,41 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            ...
+                            Sosyal Medya
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item"
-                                href="https://www.youtube.com/">python</a>
+                                href="https://www.facebook.com/">facebook</a>
                             <a class="dropdown-item"
-                                href="https://www.youtube.com/">Django</a>
+                                href="https://www.youtube.com/">youtube</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item"
-                                href="https://www.youtube.com/">c++</a>
+                                href="https://www.twitter.com/">twitter</a>
                         </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'about' %}">Hakkımızda</a>
                     </li>
                 </ul>
-
-                {% if user.is_authenticated %}
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="">yeni paylaşım</a></li>
-
-                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"> profil</a></li>
-                    
-                    <li class="nav-item"><a class="nav-link" href="{% url 'logout'%}">çıkış yap </a></li>
-                </ul>
-                {% else %}
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Giriş yap </a></li>
-
-                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Kayıt ol</a></li>
-                </ul>
-                {% endif %}
-
-
+                
+                <div >
+                    {% if user.is_authenticated %}
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'new_post' %}">yeni paylaşım</a></li>
+    
+                        <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"> profil</a></li>
+                        
+                        <li class="nav-item"><a class="nav-link" href="{% url 'logout'%}">çıkış yap </a></li>
+                    </ul>
+                    {% else %}
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Giriş yap </a></li>
+    
+                        <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Kayıt ol</a></li>
+                    </ul>
+                    {% endif %}
+                </div>
+                 
             </div>
         </nav>
         <!--End Navbar-->
@@ -101,8 +102,11 @@
                         </div>
                     </div>
 
+                    
+
                 </div>
             </div>
+        
         </section>
 
         <footer class="bg-secondary">
@@ -114,10 +118,11 @@
                                 <h3 class="card-title text-center border-bottom p-2 m-3">Hakkımızda</h3>
                                 <div class="card-body">
                                     <div class="text-center">
-                                        <img src="{% static 'blog\images\i2.ico' %}" alt="logo" width="50px">
+                                        <img src="{% static 'blog\images\b.png' %}" alt="logo" width="50px">
+                                        <a href="{% url 'home'%}"></a>
                                     </div>
                                     <p class="text-center" >
-                                        xyz xyz xyz 
+                                        <a class="text-dark" href="{% url 'about'%}" >Coin Blog</a>
                                     </p>
     
                                 </div>
@@ -126,14 +131,14 @@
                                 <h3 class="card-title text-center border-bottom p-2 m-3 color-black" >Önemli linkler</h3>
                                 <div class="card-body">
                                     <ul>
-                                        <li><a class="text-dark" href="https://www.python.org/doc/">python</a></li>
-                                        <li><a class="text-dark" href="https://.....com/">Django</a></li>
-                                        <li><a class="text-dark" href="https://........org/">c++</a></li>
+                                        <li><a class="text-dark" href="https://www.facebook.com">facebook</a></li>
+                                        <li><a class="text-dark" href="https://.....com/">youtube</a></li>
+                                        <li><a class="text-dark" href="https://........org/">twitter</a></li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="card m-3">
-                                <h3 class="card-title text-center border-bottom p-2 m-3">sosyal medya</h3>
+                                <h3 class="card-title text-center border-bottom p-2 m-3">Sosyal Medya</h3>
                                 <h4 class="card-body text-center">
                                     <a class="text-secondary" href=""><i class="fab fa-facebook"></i></a>
                                     <a class="text-secondary" href=""><i class="fab fa-twitter"></i></a>

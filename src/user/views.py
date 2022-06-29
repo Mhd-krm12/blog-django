@@ -12,18 +12,17 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user = form.save(commit=False)
-            #username = form.cleaned_data['username']
+            username = form.cleaned_data['username']
             new_user.set_password(form.cleaned_data['password1'])
             new_user.save()
-            # messages.success(
-            #    request, 'تهانينا {} لقد تمت عملية التسجيل بنجاح.'.format(username))
+            messages.success(request, 'Tebrikler {} Başarıyla Kayıt oldunuz.'.format(username))
             messages.success(
-                request, f'Tebrikler {new_user} kayıt oldunuz.')
+                request, f' Başarıyla Kayıt oldunuz {new_user} tebrikler.')
             return redirect('login')
     else:
         form = UserCreationForm()
     return render(request, 'user/register.html', {
-        'title': 'register',
+        'title': 'Kayıt ol',
         'form': form,
     })
 
@@ -38,17 +37,17 @@ def login_user(request):
             return redirect('profile')
         else:
             messages.warning(
-                request, 'Kullanıcı adı ya da şifreniz hatalıdır.')
+                request, 'Hatalı kullanıcı adı ya da şifre girdiniz.')
 
     return render(request, 'user/login.html', {
-        'title': 'Giriş',
+        'title': ' Giriş yap',
     })
 
 
 def logout_user(request):
     logout(request)
     return render(request, 'user/logout.html', {
-        'title': 'logout'
+        'title': ' çıkış yap '
     })
 
 
@@ -65,7 +64,7 @@ def profile(request):
     except EmptyPage:
         post_list = paginator.page(paginator.num_page)
     return render(request, 'user/profile.html', {
-        'title': 'profile',
+        'title': ' Profile',
         'posts': posts,
         'page': page,
         'post_list': post_list,
@@ -82,14 +81,14 @@ def profile_update(request):
             user_form.save()
             profile_form.save()
             messages.success(
-                request, 'profile göncellendi.')
+                request, ' Profile Güncellendi.')
             return redirect('profile')
     else:
         user_form = UserUpdateForm(instance=request.user)
         profile_form = ProfileUpdateForm(instance=request.user.profile)
 
     context = {
-        'title': 'profile güncelle',
+        'title': 'Profile Güncelleme',
         'user_form': user_form,
         'profile_form': profile_form,
     }
