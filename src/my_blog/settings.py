@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'user.apps.UserConfig',
     'crispy_forms',
+    
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #     ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_REDIRCECT_URL = 'home'
+LOGIN_URL = 'login'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

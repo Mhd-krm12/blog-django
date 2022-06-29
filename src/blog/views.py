@@ -28,7 +28,7 @@ def post_detail(request, post_id):
             new_comment.post = post
             new_comment.save()
             # Deprecated line to prevent form to post data when refresh a page
-            # comment_form = NewComment()
+            comment_form = NewComment()
             return redirect('detail', post_id)
     else:
         comment_form = NewComment()

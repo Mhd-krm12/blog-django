@@ -1,4 +1,6 @@
 {% load static %}
+{% load post_tag %}
+
 <!DOCTYPE html> 
 
 <html lang="tr">
@@ -58,13 +60,16 @@
                 {% if user.is_authenticated %}
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="nav-link" href="">yeni paylaşım</a></li>
-                    <li class="nav-item"><a class="nav-link" href=""> profil</a></li>
-                    <li class="nav-item"><a class="nav-link" href="">çıkış yap </a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'profile' %}"> profil</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="{% url 'logout'%}">çıkış yap </a></li>
                 </ul>
                 {% else %}
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="nav-link" href="">Giriş yap </a></li>
-                    <li class="nav-item"><a class="nav-link" href="">Kayıt ol</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}">Giriş yap </a></li>
+
+                    <li class="nav-item"><a class="nav-link" href="{% url 'register' %}">Kayıt ol</a></li>
                 </ul>
                 {% endif %}
 
@@ -85,24 +90,12 @@
                     <div class="col-md-4">
                         <div class="card mb-3 ">
                             <h3 class="text-center bg-secondary text-light p-2">son paylaşımlar</h3>
-                            {% include 'blog/latest_posts.html' %}
+                            {% latest_posts %}
                         </div> 
                         <div class="card mb-3" >
                             <h3 class="text-center bg-secondary text-light p-2">son yorumlar</h3>
-                            <ul>
-                                <li>
-                                    <a href="#">ilk yorum</a>
-                                </li>
-                                <li>
-                                    <a href="#">ikinci yorum</a>
-                                </li>
-                                <li>
-                                    <a href="#">üçüncü yorum</a>
-                                </li>
-                                <li>
-                                    <a href="#">dörtüncü yorum</a>
-                                </li>
-                            </ul>
+                            {% latest_comments %}
+                            
                         </div> 
 
                         </div>
